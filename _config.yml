@@ -1,0 +1,37 @@
+remote_theme : sharadcodes/jekyll-theme-dark-reader
+title: Dark Reader
+markdown: kramdown
+url: "https://parkinjong.github.io"
+baseurl: ""
+
+# for atom feed
+author:
+  name: Sharad Raj Singh Maurya
+  email: dev_sharad@outlook.com
+
+plugins:
+  - jekyll-paginate
+  - jemoji
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+paginate_path: "/page:num/"
+
+paginate: 5
+
+collections_dir: all_collections
+collections:
+  posts:
+    output: true
+  projects:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "post"
+
+
+exclude: ['sitemap.xml','feed.xml', 'LICENSE', 'README.md']
