@@ -1,8 +1,7 @@
-remote_theme : sharadcodes/jekyll-theme-dark-reader
 title: Dark Reader
 markdown: kramdown
-url: "https://parkinjong.github.io"
-baseurl: ""
+url: ""
+baseurl: "/jekyll-theme-dark-reader"
 
 # for atom feed
 author:
