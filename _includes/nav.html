@@ -1,5 +1,8 @@
-<nav>
-	{% for item in site.data.nav.list %}
-	<a href="{{site.baseurl}}/{{item.url}}">{{item.title}}</a>
-	{% endfor %}
-</nav>
+{%- if site.texture.showNav -%}
+<div class="navbar">
+	<ul>
+		<a href="#"><li>Home</li></a>
+		<a href="#"><li>About</li></a>
+	</ul>
+</div>
+{%- endif -%}
