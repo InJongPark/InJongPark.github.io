@@ -1,66 +1,35 @@
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>{{ site.name }} | {{ page.title }}</title>
-  <meta name="description" content="{{ page.description }}">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta property="og:title" content="{{ page.title | escape }}">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:description" content="{{ page.description }}">
-  <meta property="og:site_name" content="{{ site.name }}">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:url" content="{{ page.url | absolute_url }}">
-  <meta name="twitter:title" content="{{ page.title | escape }}">
-  <meta name="twitter:description" content="{{ page.description }}">
-
-  {% if page.thumb_image %}
-    {% if page.thumb_image contains '://' %}
-      <meta property="og:image" content="{{ page.thumb_image }}">
-      <meta name="twitter:image" content="{{ page.thumb_image }}">
-    {% else %}
-      <meta property="og:image" content="{{ site.url }}{% asset '{{ page.thumb_image }}' @path %}">
-      <meta name="twitter:image" content="{{ site.url }}{% asset '{{ page.thumb_image }}' @path %}">
-    {% endif %}
+  {% if site.plugins contains 'jekyll-seo-tag' or site.gems contains 'jekyll-seo-tag' %}
+    {% comment %}
+      Add metadata for search engines and social networks if jekyll-seo-tag plugin is enabled
+    {% endcomment %}
+    {% include head-seo.html %}
   {% else %}
-    <meta property="og:image" content="{{ site.url }}{% asset og-image.jpg @path %}">
-    <meta name="twitter:image" content="{{ site.url }}{% asset og-image.jpg @path %}">
+    <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html', '' | absolute_url }}">
   {% endif %}
 
-  <link href="{{ 'feed.xml' | absolute_url }}" type="application/rss+xml" rel="alternate" title="{{ site.name }} Last 10 blog posts" />
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
 
-  {% if site.local_fonts %}
-    {% asset fonts.css %}
+  <link rel="stylesheet" href="{{ '/assets/stylesheets/main.css' | relative_url }}">
+  {% if site.data.theme.google_fonts %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={% for font in site.data.theme.google_fonts %}{{ font.name | replace: ' ', '+' }}{% if font.weights %}:{% endif %}{{ font.weights | remove: ' ' }}{% if forloop.last != true %}|{% endif %}{% endfor %}">
   {% endif %}
 
-  {% if site.theme_toggle == true %}
-
-    {% if site.blog_theme == "light" %}
-      <link rel="icon" type="image/x-icon" href="{% asset favicon-light.ico @path %}">
-      <link rel="apple-touch-icon" href="{% asset apple-touch-icon-light.png @path %}">
-      <link rel="stylesheet" type="text/css" title="light" id="light" href="{% asset light.css @path%}">
-      <link rel="stylesheet" type="text/css" title="dark" id="dark" href="{% asset dark.css @path%}" disabled="true">
-    {% else %}
-      <link rel="icon" type="image/x-icon" href="{% asset favicon-dark.ico @path %}">
-      <link rel="apple-touch-icon" href="{% asset apple-touch-icon-dark.png @path %}">
-      <link rel="stylesheet" type="text/css" title="light" id="light" href="{% asset light.css @path%}">
-      <link rel="stylesheet" type="text/css" title="dark" id="dark" href="{% asset dark.css @path%}" disabled="false">
-    {% endif %}
-
-  {% else %}
-
-    {% if site.blog_theme == "light" %}
-      <link rel="icon" type="image/x-icon" href="{% asset favicon-light.ico @path %}">
-      <link rel="apple-touch-icon" href="{% asset apple-touch-icon-light.png @path %}">
-      {% asset light.css %}
-    {% else %}
-      <link rel="icon" type="image/x-icon" href="{% asset favicon-dark.ico @path %}">
-      <link rel="apple-touch-icon" href="{% asset apple-touch-icon-dark.png @path %}">
-      {% asset dark.css %}
-    {% endif %}
-
+  {% if site.plugins contains 'jekyll-feed' or site.gems contains 'jekyll-feed'%}
+    {% comment %}
+      Add Atom feed link if jekyll-feed plugin is enabled
+    {% endcomment %}
+    {% include head-feed.html %}
   {% endif %}
-
 </head>

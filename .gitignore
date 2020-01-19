@@ -1,15 +1,15 @@
-# Global
-*.DS_Store
-Desktop.ini
-Thumbs.db
-
-# Project
-!.keep
-*.sass-cache
-/_assets/yarn/
-/_site/
-/.jekyll-cache/
+*.gem
+*.sublime-project
+*.sublime-workspace
+.bundle
+.DS_Store
+.jekyll-cache
+.jekyll-metadata
+.sass-cache
+_asset_bundler_cache
+_site
+codekit-config.json
+example/_site
 Gemfile.lock
-package-lock.json
-yarn.lock
-.idea
+node_modules
+npm-debug.log*
