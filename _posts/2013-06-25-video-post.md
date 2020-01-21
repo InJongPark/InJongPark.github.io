@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "A Post with a Video"
+cartegory: theme-sample
 date:   2016-03-15
 excerpt: "Custom written post descriptions are the way to go... if you're not lazy."
 tag:

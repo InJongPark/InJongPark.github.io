@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "MathJax Example"
+cartegory: theme-sample
 date:   2015-08-10
 excerpt: "MathJax Example for Moon Jekyll Theme."
 tag:
