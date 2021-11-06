@@ -17,7 +17,7 @@ tags: [nas,synology,vpn,torrent,expressvpn]     # TAG names should always be low
 
 간단하게 셋팅할 수 있도록 가이드를 작성해보겠다.  
   
-### 1. Docker 설치
+## Docker 설치
 Docker를 사용하기 위해서 Synology에서 패키지센터를 통해 Docker를 설치한다.  
 ![docker](/assets/img/2021-11-06-synology-nas-torrent에-vpn-적용하기-with-docker/docker.png)
 _docker 설치 완료_
@@ -36,7 +36,7 @@ CPython version: 3.7.10
 OpenSSL version: OpenSSL 1.1.0l  10 Sep 2019
 ```
 에러 메세지 없이 버전이 나오면 성공이다.  
-#### docker와 docker-compose의 차이  
+**docker와 docker-compose의 차이**  
 docker
 : 하나의 컨테이너 실행  
 
@@ -44,7 +44,7 @@ docker-compose
 : 여러 컨테이너를 yaml file로 세팅하여 한번에 실행
   
   
-### 2. docker-compose.yaml 작성
+## docker-compose.yaml 작성
 이제 docker-compose.yaml 파일을 작성해야한다.  
 아래는 가이드 문서에 나온 docker-compose.yml의 예시.  
 ```yaml
@@ -118,7 +118,7 @@ services:
   
 
 최대한 하나씩 설정들을 살펴보며 설명을 해보겠다.
-#### volumes
+### volumes
 ```yaml
         volumes:
             - '/volume1/500/transmission/:/data'
@@ -128,7 +128,7 @@ Synology /volume1/500/transmission/의 경로와 docker의 /data/ 경로를 바�
 원하는 경로로 설정하면 된다.  
   
   
-#### environment 
+### environment 
 ```yaml
         environment:
             - OPENVPN_PROVIDER=EXPRESSVPN
@@ -191,7 +191,7 @@ Synology /volume1/500/transmission/의 경로와 docker의 /data/ 경로를 바�
 - 추가로 Transmission에 적용할 옵션들은 [링크](https://github.com/transmission/transmission/wiki/Editing-Configuration-Files)에서 찾아서 TRANSMISSIOPN_대문자+언더바 형식으로 적용하면 된다.
   
   
-#### port
+### port
 ```yaml
         ports:
             - '9091:9091'
@@ -201,7 +201,7 @@ Synology /volume1/500/transmission/의 경로와 docker의 /data/ 경로를 바�
   
   
   
-#### proxy
+### proxy
 ```yaml
     proxy:
         image: haugene/transmission-openvpn-proxy
@@ -214,7 +214,7 @@ Synology /volume1/500/transmission/의 경로와 docker의 /data/ 경로를 바�
   
 
 
-### 3. docker-compose.yml 실행
+## docker-compose.yml 실행
 2번에서 작성한 doker-compose.yml을 적당한 경로에 옮기고 해당 경로에서 아래와 같은 명령어를 입력한다.  
 ```bash
 docker-compose up -d
@@ -228,14 +228,14 @@ Creating transmission-openvpn_proxy_1                ... done
 에러 없이 잘 실행 되면 된다.  
   
   
-### 4. Transmission WEB UI 접근
+## Transmission WEB UI 접근
 실행을 했으니 정상적으로 잘 동작하는지 확인 하기 위해서 WEB UI에 접근을 해보겠다.  
 Synology가 공유기에서 할당 받은 로컬 아이피와 위에서 설정한 port를 이용해 접근을 하면 된다.  
 ![Transmission_WEB_UI](/assets/img/2021-11-06-synology-nas-torrent에-vpn-적용하기-with-docker/Transmission_WEB_01.png)
 _flood-for-transmission_
   
 
-### 5. VPN 적용 확인
+## VPN 적용 확인
 접근이 잘 되니 이제 VPN설정이 잘 되는 지 확인이 필요하다.
 - <https://ipleak.net/>  
 
