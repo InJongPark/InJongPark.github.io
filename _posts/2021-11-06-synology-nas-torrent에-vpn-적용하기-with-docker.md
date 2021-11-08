@@ -1,7 +1,7 @@
 ---
 title: Synology NAS Torrent에 VPN 적용하기 with Docker
 date: 2021-11-06 20:22:00 +0900
-categories: [NAS,Torrent,VPN,Synology]
+categories: [NAS]
 tags: [nas,synology,vpn,torrent,expressvpn]     # TAG names should always be lowercase
 ---
 
