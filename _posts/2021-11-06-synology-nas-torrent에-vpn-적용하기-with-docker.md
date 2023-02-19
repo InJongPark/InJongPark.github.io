@@ -259,3 +259,4 @@ _ipleak에 IP가 표시되는 화면_
 ![ipleak_07](/assets/img/2021-11-06-synology-nas-torrent에-vpn-적용하기-with-docker/ipleak_07.png)
 _naver에 내 아이피 주소 확인 화면_
 다운로드 항목에 추가가 되면 ipleak 페이지에 해당 마그넷으로 다운로드 중인 피어의 IP가 표시가 된다. 해당 IP 주소가 같은 공유기에 물려있는 PC로 네이버에 `내 아이피 주소 확인`을 검색한 후 표시되는 IP와 다르게 표시가 된다면 성공이다.  
+  
