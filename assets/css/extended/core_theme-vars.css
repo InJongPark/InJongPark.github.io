@@ -1,0 +1,13 @@
+:root {
+    /* --primary: rgb(30, 30, 30); */
+    --primary: rgb(0, 0, 0);
+    /* --content: rgb(31, 31, 31); */
+    --content: rgb(0, 0, 0);
+}
+
+.dark {
+    /* --primary: rgb(218, 218, 219); */
+    --primary: rgb(255, 255, 255);
+    /* --content: rgb(196, 196, 197); */
+    --content: rgb(255, 255, 255);
+}

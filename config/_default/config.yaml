@@ -1,0 +1,85 @@
+baseURL: "http://localhost/"
+title: InJongPark
+languageCode: kr-ko
+paginate: 5
+theme: PaperMod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+# googleAnalytics: UA-123-45
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+languages:
+    en:
+        languageName: "Korean"
+        weight: 1
+        taxonomies:
+          category: categories
+          tag: tags
+          series: series
+        menu:
+            main:
+                # - name: Profile
+                #   url: profile
+                #   weight: 5
+                - name: Archive
+                  url: archives
+                  weight: 5
+                - name: Search
+                  url: search/
+                  weight: 10
+                - name: Tags
+                  url: tags/
+                  weight: 10
+
+params:
+  defaultTheme: light
+  # defaultTheme: dark
+  # defaultTheme: auto # to switch between dark or light according to browser theme
+  disableThemeToggle: true
+  homeInfoParams:
+    Title: InJong Park
+    Content: |
+      안녕하세요 박인종입니다.
+      블로그를 찾아주셔서 감사합니다.
+  socialIcons: # optional
+    - name: "linkedin"
+      url: "https://www.linkedin.com/in/injong-park-535bb5235/"
+    - name: "github"
+      url: "https://github.com/parkinjong"
+    - name: "kakaotalk"
+      url: "https://open.kakao.com/o/sK20qg8e"
+  # profileMode:
+  #   enabled: true
+  #   title: "InJong Park" # optional default will be site title
+  #   subtitle: "IT는 어려워요"
+  #   # imageUrl: "<image link>" # optional
+  #   # imageTitle: "<title of image as alt>" # optional
+  #   imageWidth: 120 # custom size
+  #   imageHeight: 120 # custom size
+  #   # buttons:
+  #   #   - name: Archive
+  #   #   url: "/archives"
+  #   #   - name: Github
+  #   #   url: "https://github.com/parkinjong"
+  #   # socialIcons: # optional
+  #   #     - name: "<platform>"
+  #   #         url: "<link>"
+  #   #     - name: "<platform 2>"
+  #   #         url: "<link2>"
+  ShowBreadCrumbs: true
+  # ShowPostNavLinks: true
+  ShowCodeCopyButtons: true
+  comments: true
+  
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON # is necessary
