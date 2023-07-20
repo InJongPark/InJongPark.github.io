@@ -1,5 +1,5 @@
 ---
-title: "Dart-00-nomadcoder"
+title: "dart-00-nomadcoder"
 date: 2023-07-20T20:25:21+09:00
 draft: false
 categories: [dart,language]
