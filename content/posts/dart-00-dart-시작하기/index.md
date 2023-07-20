@@ -1,5 +1,5 @@
 ---
-title: "dart-00-nomadcoder"
+title: "dart-00 dart 시작하기"
 date: 2023-07-20T20:25:21+09:00
 draft: false
 categories: [dart,language]
@@ -7,7 +7,8 @@ tags: [dart,flutter,nomadcoder]
 ShowToc: true
 comments: true
 ---
-
+with [https://nomadcoders.co/dart-for-beginners](https://nomadcoders.co/dart-for-beginners)
+  
 ## dart란?
 구글에서 만들었으며 모든 플랫폼에서 빠른 앱을 위한 클라이언트 최적화 언어입니다.
 - Optimized for UI  
