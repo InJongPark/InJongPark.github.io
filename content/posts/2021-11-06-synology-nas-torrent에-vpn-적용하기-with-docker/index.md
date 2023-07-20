@@ -120,11 +120,11 @@ services:
 
 최대한 하나씩 설정들을 살펴보며 설명을 해보겠다.
 ### volumes
+#### docker-compose.yaml - volume
 ```yaml
         volumes:
             - '/volume1/500/transmission/:/data'
 ```
-{: file='docker-compose.yaml - volume'}
 Synology /volume1/500/transmission/의 경로와 docker의 /data/ 경로를 바인드 시켜 transmission의 데이터를 Synology 디스크 공간에 저장할 수 있게 된다.  
 원하는 경로로 설정하면 된다.  
   
