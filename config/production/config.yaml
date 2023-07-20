@@ -1,1 +1,7 @@
 baseURL: "https://parkinjong.github.io/"
+googleAnalytics: G-FKG4HX037J
+params:
+  env: production
+  analytics:
+    google:
+      SiteVerificationTag: "G-FKG4HX037J"
