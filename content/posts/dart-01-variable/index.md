@@ -10,7 +10,7 @@ comments: true
 with [https://nomadcoders.co/dart-for-beginners](https://nomadcoders.co/dart-for-beginners)
   
 ## Var Keyword
-```
+```dart
 void main() {
   var name = '니꼬';
   // name이 문자열로 초기화 됐을 때 후에 다른 타입(정수형)을 넣을 수 없음
@@ -29,7 +29,7 @@ void main() {
 ```
 
 ## Dynamic Type
-```
+```dart
 void main() {
   // var로 선언하고 값을 넣지 않으면 dynamic type이 됨
   var name;
@@ -45,7 +45,7 @@ void main() {
 ```
 
 ## Nullable Variable
-```
+```dart
 // null safety가 없다면 아래 코드는 런타임(실행중)에 NoSuchMethodError가 발생
 // bool isEmpty(String string) => string.length == 0;
 // main() {
@@ -72,7 +72,7 @@ void main() {
 ```
 
 ## Final Variable
-```
+```dart
 // 한번 값을 넣게 되면 수정할 수 없는 변수
 void main() {
   final nico = 'nico';
@@ -82,7 +82,7 @@ void main() {
 ```
 
 ## Late Variable
-```
+```dart
 // 값 초기화 없이 변수를 선언하고 나중에 값을 지정할 수 있음
 // var 나 final 앞에 붙여줄 수 있는 수식어
 void main() {
@@ -103,7 +103,7 @@ void main() {
 }
 ```
 late를 붙여 선언한 변수와 late 없이 선언한 변수 둘다 사용이 가능했는데 print 구문을 넣고 실행해보니 에러 문구에서 차이가 났다.
-```
+```shell
 > dart run main.dart
 main.dart:7:9: Error: Late variable 'nico' without initializer is definitely unassigned.
   print(nico);
@@ -114,7 +114,7 @@ main.dart:16:9: Error: Non-nullable variable 'name' must be assigned before it c
 ```
 
 ## Constant Variable
-```
+```dart
 void main() {
     // 컴파일 할 떄 알 수 있는 값으로 final 처럼 값을 한번만 지정 가능.
     // 컴파일 후에 알 수 있는 값으로는 사용 못함. ex) const API = getAPIKey(); X
