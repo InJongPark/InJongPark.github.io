@@ -32,4 +32,5 @@ flutter cors error
 ## export PATH="$PATH":"$HOME/.pub-cache/bin"
 ❯ zsh
 ❯ fluttercors --disable
+❯ fluttercors --enable
 ```
