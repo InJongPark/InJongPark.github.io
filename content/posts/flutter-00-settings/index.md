@@ -23,5 +23,13 @@ settings.json
 "dart.previewFlutterUiGuides": true,
 ```
 
-### plugin
-dart pub global activate flutter_cors
+### pub
+
+flutter cors error
+```shell
+❯ dart pub global activate flutter_cors
+## vi ~/.zshrc
+## export PATH="$PATH":"$HOME/.pub-cache/bin"
+❯ zsh
+❯ fluttercors --disable
+```
