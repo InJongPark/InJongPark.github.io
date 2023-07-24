@@ -22,3 +22,6 @@ settings.json
 "editor.formatOnSave": true,
 "dart.previewFlutterUiGuides": true,
 ```
+
+### plugin
+dart pub global activate flutter_cors
